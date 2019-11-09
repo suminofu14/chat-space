@@ -1,8 +1,6 @@
 # DB設計
----
 
 ## users table
----
 |Column|Type|Options|
 |:-----------|------------:|:------------:|
 |name|string|null: false, unique: true, index: true|
@@ -14,7 +12,6 @@
   - has_many :groups_users
 
 ## groups table
----
 |Column|Type|Options|
 |:-----------|------------:|:------------:|
 |name|string|null: false|
@@ -25,7 +22,6 @@
   - has_many :groups_users
 
 ## groups_users table
----
 |Column|Type|Options|
 |:-----------|------------:|:------------:|
 |group_id|integer|null: false, foreign_key: true|
