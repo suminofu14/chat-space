@@ -15,7 +15,6 @@
 |Column|Type|Options|
 |:-----------|------------:|:------------:|
 |name|string|null: false|
-|user_id|integer|null: false, foreign_key: true|
 ### Association
   - has_many :messages
   - has_many :users, through: :groups_users
@@ -24,8 +23,8 @@
 ## groups_users table
 |Column|Type|Options|
 |:-----------|------------:|:------------:|
-|group_id|integer|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
 ### Association
   - belongs_to :user
   - belongs_to :group
@@ -33,10 +32,10 @@
 ## messages table
 |Column|Type|Options|
 |:-----------|------------:|:------------:|
-|body|text|null: false|
+|body|text||
 |image|text||
-|group_id|integer|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
 ### Association
   - belongs_to :user
   - begonds_to :group
