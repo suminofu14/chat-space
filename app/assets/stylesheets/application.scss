@@ -1,3 +1,62 @@
-@import "./reset";
+@import 'reset';
 @import "font-awesome-sprockets";
 @import "font-awesome";
+
+.wrapper {
+  height: 100%;
+}
+
+.chat-side {
+  width: 300px;
+  color: #fff;
+  float: left;
+}
+
+.side-header {
+  background-color: #253141;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  &__box {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-weight: bold;
+    &__user-name {
+      font-size: 16px;
+    }
+    &__menu {
+      display: flex;
+      &__new-group {
+        margin-left: 0.3rem;
+      }
+      &__edit-user {
+        margin-left: 0.3rem;
+      }
+    }
+    }
+  }
+
+  .groups {
+    height: calc(100vh - 100px);
+    background-color: #2f3e51;
+    padding: 20px 20px 0 20px;
+    color: #fff;
+  }
+
+  .group {
+    margin-bottom: 40px;
+    font-weight: bold;
+    color: #fff;
+    &__group-name {
+      font-size: 15px;
+    }
+    &__latast-message {
+      font-size: 11px;
+    }
+  }
+
+  .fas::before {
+    color: #fff;
+  }
