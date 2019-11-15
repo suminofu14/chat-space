@@ -2,6 +2,9 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+$font_color: #fff;
+$btn_color: #38aef0;
+
 .wrapper {
   height: 100%;
   display: flex;
@@ -13,9 +16,9 @@ a {
 
 .chat-side {
   width: 300px;
-  color: #fff;
+  color: $font_color;
   & a {
-    color: #fff;
+    color: $font_color;
   }
 }
 
@@ -49,7 +52,7 @@ a {
     height: calc(100vh - 100px);
     background-color: #2f3e51;
     padding: 0 20px;
-    color: #fff;
+    color: $font_color;
     overflow: scroll;
   }
 
@@ -57,7 +60,7 @@ a {
     margin-top: 20px;
     padding-bottom: 40px;
     font-weight: bold;
-    color: #fff;
+    color: $font_color;
     &__group-name {
       font-size: 15px;
     }
@@ -66,12 +69,10 @@ a {
     }
   }
 
-  /* ここからmain-chat */
-
   .chat-main {
     width: calc(100vw - 300px);
     & a {
-      color:#38aef0;
+      color: $btn_color;
     }
   }
 
@@ -105,12 +106,10 @@ a {
       padding: 0 20px;
       margin-right: 40px;
       margin-top: 28px;
-      border:solid 1px #38aef0;
+      border:solid 1px $btn_color;
       cursor: pointer;
     }
   }
-  
-  /* ここから message */
 
   .messages {
     height: calc(100vh - 190px);
@@ -141,8 +140,6 @@ a {
       color: #434a54;
     }
   }
-
-  /* ここからform */
 
   .form {
     height: 50px;
@@ -177,8 +174,8 @@ a {
   .submit-btn {
     width: 100px;
     height: 50px;
-    background-color: #38aef0;
-    color: #fff;
+    background-color: $btn_color;
+    color: $font_color;
     margin-left: 15px;
     cursor: pointer;
   }
