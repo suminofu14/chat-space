@@ -157,7 +157,9 @@ a {
     &__text {
       height: 50px;
       width: 100%;
+      padding: 0 40px 0 10px;
       border-style: none;
+      box-sizing: border-box;
     }
     &__image {
       position: absolute;
