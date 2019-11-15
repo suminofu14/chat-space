@@ -29,9 +29,9 @@ a {
   align-items: center;
   padding: 0 20px;
   &__box {
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    width: 100%;
     font-weight: bold;
     &__user-name {
       font-size: 16px;
@@ -49,8 +49,8 @@ a {
   }
 
   .groups {
-    height: calc(100vh - 100px);
     background-color: #2f3e51;
+    height: calc(100vh - 100px);
     padding: 0 20px;
     color: $font_color;
     overflow: scroll;
@@ -112,9 +112,9 @@ a {
   }
 
   .messages {
+    background-color: #fafafa;
     height: calc(100vh - 190px);
     padding: 0 40px;
-    background-color: #fafafa;
     overflow: scroll;
   }
 
@@ -142,9 +142,9 @@ a {
   }
 
   .form {
+    background-color: #ddd;
     height: 50px;
     padding: 20px 40px;
-    background-color: #ddd;
   }
   
   .new_message {
@@ -172,11 +172,11 @@ a {
   }
 
   .submit-btn {
+    background-color: $btn_color;
     width: 100px;
     height: 50px;
-    background-color: $btn_color;
-    color: $font_color;
     margin-left: 15px;
+    color: $font_color;
     cursor: pointer;
   }
   
