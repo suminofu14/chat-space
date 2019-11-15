@@ -10,5 +10,21 @@
     = link_to "#" do
       .main-header__edit-btn
         Edit
-  .message
-    Test message
+  .messages
+    .message
+      .message__upper-info
+        %p.message__upper-info__talker<
+          member2
+        %p.message__upper-info__date<
+          20XX/YY/ZZ(Mon)00:00:00
+      %p.message__text<
+        test message
+  .form
+    %form{class: "new_message"}
+      .input-box
+        %input{type: "text", class: "input-box__text", placeholder: "Type a message"}/
+        %label{class: "input-box__image"}
+          = icon("fas", "image" )
+          %input{type: "file", class: "input-box__image__file"}/
+      %input{type: "submit", value: "SEND", class: "submit-btn"}/
+      
