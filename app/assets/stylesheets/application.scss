@@ -1,9 +1,9 @@
-@import 'reset';
+@import "config/reset";
+@import "config/colors";
+@import "user";
+@import "modules/flash";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-
-$font_color: #fff;
-$btn_color: #38aef0;
 
 .wrapper {
   height: 100%;
@@ -16,9 +16,9 @@ a {
 
 .chat-side {
   width: 300px;
-  color: $font_color;
+  color: $white;
   & a {
-    color: $font_color;
+    color: $white;
   }
 }
 
@@ -52,7 +52,7 @@ a {
     background-color: #2f3e51;
     height: calc(100vh - 100px);
     padding: 0 20px;
-    color: $font_color;
+    color: $white;
     overflow: scroll;
   }
 
@@ -60,7 +60,7 @@ a {
     margin-top: 20px;
     padding-bottom: 40px;
     font-weight: bold;
-    color: $font_color;
+    color: $white;
     &__group-name {
       font-size: 15px;
     }
@@ -72,7 +72,7 @@ a {
   .chat-main {
     width: calc(100vw - 300px);
     & a {
-      color: $btn_color;
+      color: $light_blue;
     }
   }
 
@@ -106,7 +106,7 @@ a {
       padding: 0 20px;
       margin-right: 40px;
       margin-top: 28px;
-      border:solid 1px $btn_color;
+      border:solid 1px $light_blue;
       cursor: pointer;
     }
   }
@@ -174,11 +174,11 @@ a {
   }
 
   .submit-btn {
-    background-color: $btn_color;
+    background-color: $light_blue;
     width: 100px;
     height: 50px;
     margin-left: 15px;
-    color: $font_color;
+    color: $white;
     cursor: pointer;
   }
   

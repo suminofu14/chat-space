@@ -1,0 +1,13 @@
+$white_color: #fff;
+$blue_color: #38aef0;
+
+.flash {
+  color: $white;
+  text-align: center;
+  &__alert {
+    background-color: red;
+  }
+  &__notice {
+    background-color: $light_blue;
+  }
+}
