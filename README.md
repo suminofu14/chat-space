@@ -8,7 +8,7 @@
 |password|string|null: false|
 ### Association
   - has_many :messages
-  - has_many :groups, through: :groups_users
+  - has_many :groups, through: :group_user
   - has_many :groups_users
 
 ## groups table
@@ -17,10 +17,10 @@
 |name|string|null: false|
 ### Association
   - has_many :messages
-  - has_many :users, through: :groups_users
+  - has_many :users, through: :group_user
   - has_many :groups_users
 
-## groups_users table
+## group_users table
 |Column|Type|Options|
 |:-----------|------------:|:------------:|
 |group|references|null: false, foreign_key: true|
