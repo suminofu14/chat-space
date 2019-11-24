@@ -20,11 +20,10 @@
       %p.message__text<
         test message
   .form
-    %form{class: "new_message"}
+    = form_for [@group, @message] do |f|
       .input-box
-        %input{type: "text", class: "input-box__text", placeholder: "Type a message"}/
-        %label{class: "input-box__image"}
-          = icon("fas", "image" )
-          %input{type: "file", class: "input-box__image__file"}/
-      %input{type: "submit", value: "SEND", class: "submit-btn"}/
-      
+        = f.text_field :body, class: 'input-box__text', placeholder: 'type a message'
+        = f.label :image, class: 'input-box__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'input-box__image__file'
+      = f.submit 'SEND', class: 'submit-btn'
