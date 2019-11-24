@@ -4,5 +4,5 @@ class Message < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
-  validates :body, presense: true, unless: :image?
+  validates :body, presence: true, unless: :image?
 end
