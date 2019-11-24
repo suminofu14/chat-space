@@ -11,14 +11,7 @@
       .main-header__edit-btn
         Edit
   .messages
-    .message
-      .message__upper-info
-        %p.message__upper-info__talker<
-          member2
-        %p.message__upper-info__date<
-          20XX/YY/ZZ(Mon)00:00:00
-      %p.message__text<
-        test message
+    = render @messages
   .form
     = form_for [@group, @message] do |f|
       .input-box
