@@ -5,8 +5,9 @@
         = @group.name
       %ul.main-header__left-box__member-list
         member:
-        %li.main-header__left-box__member-list__member<
-          member1
+        - @group.group_users.each do |group_user|
+          %li.main-header__left-box__member-list__member<
+            = group_user.user.name
     = link_to "#" do
       .main-header__edit-btn
         Edit
