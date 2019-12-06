@@ -2,7 +2,6 @@ $(function() {
 
   function buildMessage(message){
     if (message.image) {
-      var image = message.image.file.match(/\/uploads.+/)
       var html = `<div class="message">
                     <div class="message__upper-info">
                       <div class="message__upper-info__talker">
@@ -16,7 +15,7 @@ $(function() {
                       <p class="lower-messge__content">
                         ${message.body}
                       </p>
-                      <img src="${image}">
+                      <img src="${message.image}">
                     </div>
                   </div>`
     } else {
