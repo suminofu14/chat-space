@@ -58,7 +58,7 @@ $(function() {
       $('#new_message')[0].reset();
     })
     .fail(function(){
-
+      alert("メッセージ送信に失敗しました")
     })
     .always(() => {
       $('.submit-btn').removeAttr("disabled")
