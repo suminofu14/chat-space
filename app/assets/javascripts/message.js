@@ -2,7 +2,7 @@ $(function() {
 
   function buildMessage(message){
     if (message.image) {
-      var html = `<div class="message" data-message-id=${message.id}>
+      let html = `<div class="message" data-message-id=${message.id}>
                     <div class="message__upper-info">
                       <div class="message__upper-info__talker">
                         ${message.name}
@@ -18,8 +18,9 @@ $(function() {
                       <img src="${message.image}">
                     </div>
                   </div>`
+        return html;
     } else {
-      var html = `<div class="message" data-message-id=${message.id}>
+      let html = `<div class="message" data-message-id=${message.id}>
                     <div class="message__upper-info">
                       <div class="message__upper-info__talker">
                         ${message.name}
@@ -34,14 +35,14 @@ $(function() {
                       </p>
                     </div>
                   </div>`
+      return html;
     }
-    return html;
   }
 
   $('#new_message').on('submit', function(e){
     e.preventDefault();
-    var formData = new FormData(this);
-    var url = $(this).attr('action');
+    let formData = new FormData(this);
+    let url = $(this).attr('action');
     $.ajax({
       url: url,
       type: "POST",
@@ -51,7 +52,7 @@ $(function() {
       contentType: false
     })
     .done(function(message){
-      var html = buildMessage(message);
+      let html = buildMessage(message);
       $('.messages').append(html);
       $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
       $('#new_message')[0].reset();
@@ -64,7 +65,7 @@ $(function() {
     })
   })
 
-  var reloadMessages = function() {
+  let reloadMessages = function() {
     if (window.location.href.match(/\/groups\/\d+\/messages/)){
       last_message_id = $('.message').last().data('message-id');
       $.ajax({
@@ -74,7 +75,7 @@ $(function() {
         data: {id: last_message_id}
       })
       .done(function(messages) {
-        var insertHTML = '';
+        let insertHTML = '';
         $.each(messages, function(i, message) {
           insertHTML += buildMessage(message)
         });
