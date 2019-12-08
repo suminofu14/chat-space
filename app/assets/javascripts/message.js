@@ -2,7 +2,7 @@ $(function() {
 
   function buildMessage(message){
     if (message.image) {
-      var html = `<div class="message">
+      var html = `<div class="message" data-message-id=${message.id}>
                     <div class="message__upper-info">
                       <div class="message__upper-info__talker">
                         ${message.name}
@@ -19,7 +19,7 @@ $(function() {
                     </div>
                   </div>`
     } else {
-      var html = `<div class="message">
+      var html = `<div class="message" data-message-id=${message.id}>
                     <div class="message__upper-info">
                       <div class="message__upper-info__talker">
                         ${message.name}
@@ -63,4 +63,27 @@ $(function() {
       $('.submit-btn').removeAttr("disabled")
     })
   })
+
+  var reloadMessages = function() {
+    last_message_id = $('.message').last().data('message-id');
+    $.ajax({
+      url: "api/messages",
+      type: 'get',
+      dataType: 'json',
+      data: {id: last_message_id}
+    })
+    .done(function(messages) {
+      var insertHTML = '';
+      $.each(messages, function(i, message) {
+        insertHTML += buildMessage(message)
+      });
+      $('.messages').append(insertHTML);
+      if (messages.length != 0)
+        $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
+    })
+    .fail(function() {
+      alert('自動更新に失敗しました');
+    });
+  };
+  setInterval(reloadMessages, 7000);
 });
