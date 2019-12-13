@@ -29,16 +29,20 @@ $(function() {
   }
 
   function addMember(userId) {
-    let html = `<input value="${userId}" name="group[user_ids][]" type="hidden" id="group_user_ids_${userId}" />`;
+    let html = `<input value="${userId}" name="group[user_ids][]" type="hidden" class="js-chat-member__id" />`;
     $(`#${userId}`).append(html);
   }
 
   $("#user-search-field").on("keyup", function() {
     let input = $("#user-search-field").val();
+    let memberId = $(".js-chat-member__id").map(function(){
+      return $(this).val();
+    }).get();
+
     $.ajax({
       type: 'GET',
       url: '/users',
-      data: { keyword: input },
+      data: { keyword: input, id: memberId },
       dataType: 'json'
     })
     .done(function(users) {
